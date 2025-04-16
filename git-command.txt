@@ -7,6 +7,12 @@ git add sample.html                  # Stage specific modified files
 git rm --cached sample.html          # Unstages a specific file
 git commit -m "Your commit message"  # Commit the changes
 git push origin main                 # Push the changes to GitHub
+git log                              # Check all the past commits
+git log --oneline                    # Check all the past commits (but more in readable and less detailed version)
+git checkout <commit hash>           # Comback to the past commits. Sa git log --oneline mo makikita yung commit hash na gusto mo balikan
+git checkout master                  # Comback to the latest commits. (master) is yung name nng branch mo.
+git revert                           # Creating a new commit that exactly the opposite of latest commit. (Ex. Latest = Naglagay ka ng h1,                                         Revert = Inalis mo yung h1)
+
 
 # USING GIT COMMIT FOR MULTIPLE NOTES YOU WANNA SAY
 git commit                           # Commit the changes
@@ -21,3 +27,21 @@ git status                           # Check which files have changed and see al
 git add .                            # Stage all modified files within the main folder
 git commit -m "Your commit message"  # Commit the changes
 git push origin main                 # Push the changes to GitHub
+
+
+GIT BRANCHING
+git branch <new name>                # Creating new branch. Make sure it's not already existing
+git branch -d <branch-name>          # Deleting existing branch.
+git branch                           # View all the branch created
+git checkout <choose name>           # Switch or use the different branch
+
+
+
+
+
+
+
+
+
+
+
