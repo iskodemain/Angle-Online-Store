@@ -13,3 +13,11 @@ git commit                           # Commit the changes
 (SHOW THE FILE FOR MESSAGE)          # You can type now your message here
 (Esc + :q! + Enter)                  # This will force quit without saving
 (Esc + :wq + Enter)                  # This will save and quit
+
+
+COMMON USED IN GIT COMMAND
+git init                             # This is usually the first command you'll run in a new project
+git status                           # Check which files have changed and see all the track and untrack files
+git add .                            # Stage all modified files within the main folder
+git commit -m "Your commit message"  # Commit the changes
+git push origin main                 # Push the changes to GitHub
