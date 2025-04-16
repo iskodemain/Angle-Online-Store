@@ -1,4 +1,5 @@
 Essential Git Commands After Changing Code
+git init                 # This is usually the first command you'll run in a new project
 git status               # Check which files have changed
 git add .                # Stage all modified files
 git commit -m "Your commit message"  # Commit the changes
