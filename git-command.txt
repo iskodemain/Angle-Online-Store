@@ -29,7 +29,7 @@ git commit -m "Your commit message"  # Commit the changes
 git push origin main                 # Push the changes to GitHub
 
 
-GIT BRANCHING
+GIT BRANCHING (NOTE: Every time na may gagawin kang new branch dapat lagi kang nasa master/main branch para mismo doon malagay yung i-aadd mong branch at hindi siya mag branch out)
 git branch <new name>                # Creating new branch. Make sure it's not already existing
 git branch -d <branch-name>          # Deleting existing branch.
 git branch                           # View all the branch created
