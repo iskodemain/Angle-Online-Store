@@ -30,7 +30,8 @@ git push origin main                   # Push the changes to GitHub
 
 
 GIT BRANCHING (NOTE: Every time na may gagawin kang new branch dapat lagi kang nasa master/main branch para mismo doon malagay yung i-aadd mong branch at hindi siya mag branch out)
-git branch <new name>                  # Creating new branch. Make sure it's not already existing
+git branch <new name>                  # Creating new branch in Git. Make sure it's not already existing
+git push origin <branch name>          # Adding the new branch in Github.
 git branch -d <branch-name>            # Deleting existing branch in Git
 git push origin --delete <branch-name> # Deleting existing branch in Github
 git branch                             # View all the branch created
