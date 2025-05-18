@@ -1,40 +1,41 @@
 Essential Git Commands After Changing Code
-git init                             # This is usually the first command you'll run in a new project
-git status                           # Check which files have changed and see all the track and untrack files
-git add .                            # Stage all modified files within the main folder
-git reset                            # Unstages all changes
-git add sample.html                  # Stage specific modified files
-git rm --cached sample.html          # Unstages a specific file
-git commit -m "Your commit message"  # Commit the changes
-git push origin main                 # Push the changes to GitHub
-git log                              # Check all the past commits
-git log --oneline                    # Check all the past commits (but more in readable and less detailed version)
-git checkout <commit hash>           # Comback to the past commits. Sa git log --oneline mo makikita yung commit hash na gusto mo balikan
-git checkout master                  # Comback to the latest commits. (master) is yung name nng branch mo.
-git revert                           # Creating a new commit that exactly the opposite of latest commit. (Ex. Latest = Naglagay ka ng h1,                                         Revert = Inalis mo yung h1)
+git init                               # This is usually the first command you'll run in a new project
+git status                             # Check which files have changed and see all the track and untrack files
+git add .                              # Stage all modified files within the main folder
+git reset                              # Unstages all changes
+git add sample.html                    # Stage specific modified files
+git rm --cached sample.html            # Unstages a specific file
+git commit -m "Your commit message"    # Commit the changes
+git push origin main                   # Push the changes to GitHub
+git log                                # Check all the past commits
+git log --oneline                      # Check all the past commits (but more in readable and less detailed version)
+git checkout <commit hash>             # Comback to the past commits. Sa git log --oneline mo makikita yung commit hash na gusto mo balikan
+git checkout master                    # Comback to the latest commits. (master) is yung name nng branch mo.
+git revert                             # Creating a new commit that exactly the opposite of latest commit. (Ex. Latest = Naglagay ka ng h1,                                                 Revert = Inalis mo yung h1)
 
 
 # USING GIT COMMIT FOR MULTIPLE NOTES YOU WANNA SAY
-git commit                           # Commit the changes
-(SHOW THE FILE FOR MESSAGE)          # You can type now your message here
-(Esc + :q! + Enter)                  # This will force quit without saving
-(Esc + :wq + Enter)                  # This will save and quit
+git commit                             # Commit the changes
+(SHOW THE FILE FOR MESSAGE)            # You can type now your message here
+(Esc + :q! + Enter)                    # This will force quit without saving
+(Esc + :wq + Enter)                    # This will save and quit
 
 
 COMMON USED IN GIT COMMAND
-git init                             # This is usually the first command you'll run in a new project
-git status                           # Check which files have changed and see all the track and untrack files
-git add .                            # Stage all modified files within the main folder
-git commit -m "Your commit message"  # Commit the changes
-git push origin main                 # Push the changes to GitHub
+git init                               # This is usually the first command you'll run in a new project
+git status                             # Check which files have changed and see all the track and untrack files
+git add .                              # Stage all modified files within the main folder
+git commit -m "Your commit message"    # Commit the changes
+git push origin main                   # Push the changes to GitHub
 
 
 GIT BRANCHING (NOTE: Every time na may gagawin kang new branch dapat lagi kang nasa master/main branch para mismo doon malagay yung i-aadd mong branch at hindi siya mag branch out)
-git branch <new name>                # Creating new branch. Make sure it's not already existing
-git branch -d <branch-name>          # Deleting existing branch.
-git branch                           # View all the branch created
-git checkout <choose name>           # Switch or use the different branch
-git fetch --prune                    # It removes old remote branches from your local copy that were deleted on GitHub or the remote repo, so your                                           branch list stays clean and updated.
+git branch <new name>                  # Creating new branch. Make sure it's not already existing
+git branch -d <branch-name>            # Deleting existing branch in Git
+git push origin --delete <branch-name> # Deleting existing branch in Github
+git branch                             # View all the branch created
+git checkout <choose name>             # Switch or use the different branch
+git fetch --prune                      # It removes old remote branches from your local copy that were deleted on GitHub or the remote repo, so your                                           branch list stays clean and updated.
 
 
 
