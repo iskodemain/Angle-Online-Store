@@ -37,6 +37,11 @@ git push origin --delete <branch-name> # Deleting existing branch in Github
 git branch                             # View all the branch created
 git checkout <choose name>             # Switch or use the different branch
 git fetch --prune                      # It removes old remote branches from your local copy that were deleted on GitHub or the remote repo, so your                                           branch list stays clean and updated.
+git pull                               # Switch or use the different branch
+
+
+THIS IS ONLY FOR THE MAIN BRANCH:
+git branch --set-upstream-to=origin/main main     # (What this do is when you command "git pull" and its not working or in terminal saying "There is                                                       no tracking information for the current branch." This what you should do. The main purpose of                                                         this is to link your local main branch to the remote origin/main so you can use git pull and git                                                      push without specifying the remote and branch every time.)
 
 
 
