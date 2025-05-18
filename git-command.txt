@@ -34,6 +34,7 @@ git branch <new name>                # Creating new branch. Make sure it's not a
 git branch -d <branch-name>          # Deleting existing branch.
 git branch                           # View all the branch created
 git checkout <choose name>           # Switch or use the different branch
+git fetch --prune                    # It removes old remote branches from your local copy that were deleted on GitHub or the remote repo, so your                                           branch list stays clean and updated.
 
 
 
