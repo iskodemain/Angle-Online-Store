@@ -37,7 +37,7 @@ git push origin --delete <branch-name> # Deleting existing branch in Github
 git branch                             # View all the branch created
 git checkout <choose name>             # Switch or use the different branch
 git fetch --prune                      # It removes old remote branches from your local copy that were deleted on GitHub or the remote repo, so your                                           branch list stays clean and updated.
-git pull                               # Switch or use the different branch
+git pull origin <branch-name>          # Get the latest update from that repository's branch, and then merge it into your current local branch.
 
 
 THIS IS ONLY FOR THE MAIN BRANCH:
