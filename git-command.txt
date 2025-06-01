@@ -21,7 +21,7 @@ git commit                             # Commit the changes
 (Esc + :wq + Enter)                    # This will save and quit
 
 
-COMMON USED IN GIT COMMAND
+# COMMON USED IN GIT COMMAND
 git init                               # This is usually the first command you'll run in a new project
 git status                             # Check which files have changed and see all the track and untrack files
 git add .                              # Stage all modified files within the main folder
@@ -29,13 +29,15 @@ git commit -m "Your commit message"    # Commit the changes
 git push origin main                   # Push the changes to GitHub
 
 
-GIT BRANCHING (NOTE: Every time na may gagawin kang new branch dapat lagi kang nasa master/main branch para mismo doon malagay yung i-aadd mong branch at hindi siya mag branch out)
+# GIT BRANCHING (NOTE: Every time na may gagawin kang new branch dapat lagi kang nasa master/main branch para mismo doon malagay yung i-aadd mong branch at hindi siya mag branch out)
+git branch                             # View all the branch created (local)
+git branch -r 												 # List of all the remote branches that your local Git repository knows about.
 git branch <new name>                  # Creating new branch in Git. Make sure it's not already existing
 git push origin <branch name>          # Adding the new branch in Github.
 git branch -d <branch-name>            # Deleting existing branch in Git
 git push origin --delete <branch-name> # Deleting existing branch in Github
-git branch                             # View all the branch created
 git checkout <choose name>             # Switch or use the different branch
+git fetch  														 # Get latest  updates from the remote repository (GitHub)
 git fetch --prune                      # It removes old remote branches from your local copy that were deleted on GitHub or the remote repo, so your                                           branch list stays clean and updated.
 git pull origin <branch-name>          # Get the latest update from that repository's branch, and then merge it into your current local branch.
 
