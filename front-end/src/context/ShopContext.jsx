@@ -9,7 +9,7 @@ export const ShopContext = createContext();
 const ShopContextProvider = (props) => {
     const currency = <TbCurrencyPeso className="peso-sign"/>; 
     const delivery_fee = 38;
-    const backendUrl = import.meta.env.VITE_BACKEND_URL_2
+    const backendUrl = import.meta.env.VITE_BACKEND_URL
 
     /*--------------------------------------USESTATE--------------------------------------*/
     const [search, setSearch] = useState('')

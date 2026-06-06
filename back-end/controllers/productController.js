@@ -20,7 +20,7 @@ const addProduct = async (req, res) => {
         try {
             imagesUrl = await Promise.all(
                 images.map(async (item) => {
-                    let result = await cloudinary.uploader.upload(item.path, {resource_type:'image'});
+                    let result = await cloudinary.uploader.upload(item.path, {resource_type:'image', folder: 'angle-online-store/products'});
                     return result.secure_url
                 })
             )
@@ -140,14 +140,14 @@ const updateProduct = async (req, res) => {
         const imagesToUpdate = {};
 
         if (req.files.image_1) {
-            const result = await cloudinary.uploader.upload(req.files.image_1[0].path, { resource_type: 'image' });
+            const result = await cloudinary.uploader.upload(req.files.image_1[0].path, { resource_type: 'image', folder: 'angle-online-store/products' });
             imagesToUpdate.image_1 = result.secure_url;
         } else {
             imagesToUpdate.image_1 = product.image_1; // Retain existing image
         }
 
         if (req.files.image_2) {
-            const result = await cloudinary.uploader.upload(req.files.image_2[0].path, { resource_type: 'image' });
+            const result = await cloudinary.uploader.upload(req.files.image_2[0].path, { resource_type: 'image', folder: 'angle-online-store/products' });
             imagesToUpdate.image_2 = result.secure_url;
         } else {
             if (req.body.image_2 === "null") {
@@ -156,7 +156,7 @@ const updateProduct = async (req, res) => {
         }
 
         if (req.files.image_3) {
-            const result = await cloudinary.uploader.upload(req.files.image_3[0].path, { resource_type: 'image' });
+            const result = await cloudinary.uploader.upload(req.files.image_3[0].path, { resource_type: 'image', folder: 'angle-online-store/products' });
             imagesToUpdate.image_3 = result.secure_url;
         } else {
             if (req.body.image_3 === "null") {
@@ -165,7 +165,7 @@ const updateProduct = async (req, res) => {
         }
 
         if (req.files.image_4) {
-            const result = await cloudinary.uploader.upload(req.files.image_4[0].path, { resource_type: 'image' });
+            const result = await cloudinary.uploader.upload(req.files.image_4[0].path, { resource_type: 'image', folder: 'angle-online-store/products' });
             imagesToUpdate.image_4 = result.secure_url;
         } else {
             if (req.body.image_4 === "null") {
