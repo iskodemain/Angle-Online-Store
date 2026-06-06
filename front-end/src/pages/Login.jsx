@@ -119,12 +119,13 @@ function Login() {
           <>
             <button className='LC-button' disabled={loading}>{loading ? 'Verifying...' : 'Create an Account'}</button>
             {loading && <div className="loaderCA"></div>}
-            <button onClick={() => handleStateSwitch("Login")} className='LC-button-next'>Login Here</button>
+            <button onClick={() => handleStateSwitch("Login")} className='LC-button-next' disabled={loading}>Login Here</button>
           </>
         ) : (
           <>
-            <button className='LC-button'>Sign In</button>
-            <button onClick={() => handleStateSwitch("Create Account")} className='LC-button-next'>Create an Account</button>
+            <button className='LC-button' disabled={loading}>{loading ? 'Signing In...' : 'Sign In'}</button>
+            {loading && <div className="loaderCA"></div>}
+            <button onClick={() => handleStateSwitch("Create Account")} className='LC-button-next' disabled={loading}>Create an Account</button>
           </>
         )}
       </form>
