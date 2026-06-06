@@ -3,6 +3,7 @@ import cors from 'cors';
 import 'dotenv/config';
 import {connectToDatabase} from './config/sequelize.js'
 import connectCloudinary from './config/cloudinary.js';
+import syncDatabase from './config/syncDatabase.js';
 import userRouter from './routes/userRoute.js';
 import productRouter from './routes/productRoute.js';
 import cartRouter from './routes/cartRoute.js';
@@ -31,6 +32,7 @@ app.use('/api/list-user', userListRouter)
 const startServer = async () => {
     try {
         await connectToDatabase();
+        await syncDatabase();
         app.listen(port, () => {
             console.log("Server Start on PORT: " + port);
         })
