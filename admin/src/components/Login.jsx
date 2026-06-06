@@ -13,11 +13,13 @@ const Login = ({setToken}) => {
     const [passwordType, setPasswordType] = useState('password')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [loading, setLoading] = useState(false);
     const {toastSuccess, toastError} = useContext(ShopContext)
 
     const onSubmitHandler = async(event) => {
+      event.preventDefault();
+      setLoading(true);
       try {
-        event.preventDefault();
         const response = await axios.post(backendURL + '/api/user/admin', {email, password})
         if (response.data.success) {
           setToken(response.data.token)
@@ -28,8 +30,9 @@ const Login = ({setToken}) => {
       } catch(error) {
         console.log(error);
         toast.error(error.message, {...toastError});
+      } finally {
+        setLoading(false);
       }
-      
     }
     
 
@@ -53,7 +56,10 @@ const Login = ({setToken}) => {
               {passwordType === 'password' ? <IoIosEyeOff /> : <IoIosEye />}
             </div>
           </div>
-          <button type='submit' className='LC-button'>Sign In</button>
+          <button type='submit' className='LC-button' disabled={loading}>
+            {loading ? 'Signing In...' : 'Sign In'}
+          </button>
+          {loading && <div className="loaderCA"></div>}
         </form>
       </div>
     )
