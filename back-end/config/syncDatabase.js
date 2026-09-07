@@ -5,16 +5,6 @@ import '../models/customers.js';
 import '../models/product.js';
 import '../models/orders.js';
 
-/**
- * Syncs all Sequelize models with the database.
- *
- * - { alter: true }  → updates existing tables to match the model
- *                      without dropping data (safe for development)
- * - { force: true }  → DROPS and recreates all tables every run
- *                      (use only when you want a clean slate)
- *
- * We use `alter: true` here so your data is preserved across restarts.
- */
 const syncDatabase = async () => {
     try {
         await sequelize.sync({ alter: true });
