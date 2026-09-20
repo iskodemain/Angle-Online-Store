@@ -15,16 +15,19 @@ import { ShopContext } from "./context/ShopContext.jsx";
 import Navbar from "./components/Navbar.jsx";
 import SearchBar from "./components/SearchBar.jsx";
 import ForgotPassword from './components/ForgotPassword.jsx';
-import VerifyCode from './components/VerifyCode.jsx';
-import ResetPassword from './components/ResetPassword.jsx';
-import AccountVerifyCode from './components/AccountVerifyCode.jsx'
+// TEMPORARY: OTP routes disabled — re-enable when nodemailer works
+// import VerifyCode from './components/VerifyCode.jsx';
+// import ResetPassword from './components/ResetPassword.jsx';
+// import AccountVerifyCode from './components/AccountVerifyCode.jsx'
 // CSS
 import './App.css'
 // ICON
 import { IoIosArrowUp } from "react-icons/io";
 
 const App = () => {
-  const {emailVerification, code, isLoading, emailAccountCreate} = useContext(ShopContext);
+  // TEMPORARY: emailVerification, code, emailAccountCreate unused while OTP is disabled
+  // Re-enable destructuring when nodemailer works: const {emailVerification, code, isLoading, emailAccountCreate} = useContext(ShopContext);
+  const { isLoading } = useContext(ShopContext);
   
 
   if (isLoading) {
@@ -48,12 +51,12 @@ const App = () => {
         <Route path="/login" element={<Login/>}/>
         <Route path="/place-order" element={<PlaceOrder/>}/>
         <Route path="/orders" element={<Orders/>}/>
-        {/* VERIFICATION CREATE ACCOUNT*/}
-        <Route path="/account-verification" element={emailAccountCreate ? <AccountVerifyCode/> : <Navigate to="/login" replace/>}/>
-        {/* VERIFICATION FORGOT PASSWORD*/}
+        {/* VERIFICATION CREATE ACCOUNT — TEMPORARY: disabled, re-enable when nodemailer works */}
+        {/* <Route path="/account-verification" element={emailAccountCreate ? <AccountVerifyCode/> : <Navigate to="/login" replace/>}/> */}
+        {/* VERIFICATION FORGOT PASSWORD — TEMPORARY: disabled, re-enable when nodemailer works */}
         <Route path="/forgot-password" element={<ForgotPassword/>}/>
-        <Route path="/verify-code" element={emailVerification ?  <VerifyCode /> : <Navigate to="/forgot-password" replace/>}/>
-        <Route path="/reset-password" element={emailVerification && code?  <ResetPassword /> : <Navigate to="/login" replace/>}/>
+        {/* <Route path="/verify-code" element={emailVerification ?  <VerifyCode /> : <Navigate to="/forgot-password" replace/>}/> */}
+        {/* <Route path="/reset-password" element={emailVerification ? <ResetPassword /> : <Navigate to="/forgot-password" replace/>}/> */}
       </Routes>
     </div>
 )

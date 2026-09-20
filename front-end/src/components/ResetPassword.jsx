@@ -29,23 +29,15 @@ const ResetPassword = () => {
     setLoading(true); // LOADING
 
     try {
-        const response = await axios.post(backendUrl + '/api/user/forgot-password/reset-password', {email: emailVerification, code, newPassword});
-        const codeExpired = response.data.message;
+        const response = await axios.post(backendUrl + '/api/user/forgot-password/reset-password', {email: emailVerification, newPassword});
         if (response.data.success) {
           toast.success(response.data.message, {...toastSuccess});
           setEmailVerification('');
-          setCode('');
+          // setCode('');  // TEMPORARY: OTP disabled
           sessionStorage.removeItem('emailVerification');
-          sessionStorage.removeItem('code');
+          // sessionStorage.removeItem('code');  // TEMPORARY: OTP disabled
           navigate('/login')
-        } else if(codeExpired === 'Verification code has expired. Please request a new one.') {
-          toast.error(response.data.message, { ...toastError });
-          setCode('');
-          setEmailVerification('');
-          sessionStorage.removeItem('emailVerification');
-          sessionStorage.removeItem('code');
-        }
-        else {
+        } else {
           toast.error(response.data.message, { ...toastError });
         }
     } catch (error) {

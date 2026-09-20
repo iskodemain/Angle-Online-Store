@@ -14,7 +14,9 @@ import { IoIosEyeOff } from "react-icons/io";
 // NOTE: MAKE SURE NA SAME YUNG VARIABLE NAME NG (USERS ACCOUNT VARIABLES) SA BACKEND MO HANGGANG DITO. FROM DATABASE, VARIABLE SA SERVER HANGGANG DITO SA FRONTEND.
 function Login() {
   const [currentState, setCurrentState] = useState('Login');
-  const {token, setToken, navigate, backendUrl, toastSuccess, toastError, setEmailAccountCreate} = useContext(ShopContext)
+  const {token, setToken, navigate, backendUrl, toastSuccess, toastError} = useContext(ShopContext)
+  // TEMPORARY: setEmailAccountCreate unused while OTP is disabled
+  // Re-enable when nodemailer works: const {token, setToken, navigate, backendUrl, toastSuccess, toastError, setEmailAccountCreate} = useContext(ShopContext)
 
   // USERS ACCOUNT VARIABLES
   const [isPasswordFocused, setIsPasswordFocused] = useState(false);
@@ -40,9 +42,13 @@ function Login() {
           // CREATE ACCOUNT
           const response = await axios.post(backendUrl + "/api/user/register", {user_name, email, password});
           if (response.data.success) {
-            setEmailAccountCreate(email);
+            // TEMPORARY: OTP disabled — log user in directly after registration
+            // Re-enable OTP by commenting the two lines below and uncommenting the navigate line
+            setToken(response.data.token);
+            localStorage.setItem('token', response.data.token);
+            // setEmailAccountCreate(email);
+            // navigate('/account-verification')
             toast.success(response.data.message, {...toastSuccess});
-            navigate('/account-verification')
           } else {
             toast.error(response.data.message, {...toastError});
           }
