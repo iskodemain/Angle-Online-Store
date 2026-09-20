@@ -38,7 +38,6 @@ const ShopContextProvider = (props) => {
         if (storedCode) {
             setCode(storedCode); 
         }
-        setIsLoading(false);
     }, []);
 
 
@@ -165,7 +164,9 @@ const ShopContextProvider = (props) => {
             
         } catch (error) {
             console.log(error);
-            toast.error(response.message, {...toastError});
+            toast.error(error.message, {...toastError});
+        } finally {
+            setIsLoading(false);
         }
     }
 

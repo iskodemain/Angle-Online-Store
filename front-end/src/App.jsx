@@ -28,7 +28,7 @@ const App = () => {
   
 
   if (isLoading) {
-    return <div class="loader"></div>
+    return <div className="loader"></div>
   }
   
   return(
