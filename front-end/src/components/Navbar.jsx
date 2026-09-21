@@ -15,10 +15,8 @@ function Navbar() {
 
 
   const logout = () => {
-    navigate('/login')
-    localStorage.removeItem('token')
-    setToken('');
-    setCartItems({})
+    localStorage.removeItem('token');
+    window.location.href = '/login';
   }
 
   const showSidebar = () => setSideBar(!sidebar)
