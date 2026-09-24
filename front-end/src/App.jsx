@@ -31,7 +31,16 @@ const App = () => {
   
 
   if (isLoading) {
-    return <div className="loader"></div>
+    return (
+      <div className="loader-screen">
+        <div className="loader-spinner"></div>
+        <p className="loader-title">Angle Online Store</p>
+        <p className="loader-message">
+          Initial load may take a moment — we're on a free deployment plan.<br/>
+          Thank you for your patience.
+        </p>
+      </div>
+    )
   }
   
   return(
